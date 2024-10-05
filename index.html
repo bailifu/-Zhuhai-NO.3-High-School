@@ -3,6 +3,31 @@
     <head>
         <meta charset="UTF-8">
 
+        <style>
+            .image-container {
+                margin: 10px 0;
+            }
+            .image-container button {
+                margin-bottom: 10px;
+            }
+            .image-container img {
+                max-width: 100%;
+                height: auto;
+                margin-bottom: 10px;
+            }
+        </style>
+        
+        <script>
+            function toggleImage(button) {
+                var images = button.parentElement.getElementsByTagName('img');
+                var isHidden = images[0].style.display === "none";
+                for (var i = 0; i < images.length; i++) {
+                    images[i].style.display = isHidden ? "block" : "none";
+                }
+                button.textContent = isHidden ? button.getAttribute('data-hide-text') : button.getAttribute('data-show-text');
+            }
+        </script>
+
         <!-- ‼️config here 在这里配置姓名等 -->
         <script>
             /* (字符串)姓名 最多六个字符 不然可能会有点问题 实际上是懒得调样式 如果可以的话可以自己改 */
@@ -13,7 +38,37 @@
             reverse_picture_color = false; /* (布尔值)是否将图片反色 */
 
             /* (字符串)在这里写一些介绍和生前逸事 */
-            introduction = "正在攥写生前光荣事迹..."; 
+            introduction = `哈哈，大家都在啊。不好意思，刚刚冲晕过去了，现在就让我来给大家介绍一下我自己罢（不知道是喜还是悲<br>
+            我是珠海市第三中学的校长、珠海市第三中学土皇帝、资产阶级学阀付柏力。我的一生都在为资产阶级服务，换句话说，我正在努力积累自己的资产。你们根本不知道我为了这些做了多大努力，自 2024 年 8 月 3 日我正式混到校长这个职位之后，我就知道，三中现在剩下的钱和未来能够从上面批下来的钱进我口袋这事算是稳辣！！<br><br>
+            生前逸事：<br>
+            1. 购入 ZKTeco 熵基科技股份有限公司（现名）未知型号通道式 X 光安检机与未知型号手机安检门各一台，据网传其总价值为 11 万元左右。但令人忍俊不禁的是这两样设备的市场均价加起来也就四五万（可自行淘宝查证不要说我硬黑哦谢谢喵），最多不超过六万，无奖问答：请问剩下的钱去哪里了？<br>
+            2. 接上文。某领导称“该采购经过上级部门审批”，但据查证，在全国公共资源交易平台、广东省公共资源交易平台、珠海公共资源服务平台、珠海市教育局门户网站均未查到任何此次采购的相关信息，请问你们珠海市第三中学是有自己的采购平台自己把自己给审批了吗？<br>
+            3. 又接上文。既然买了安检机，那么装在哪了呢？装在应该装的地方比如考场？戳啦！我就是要装在校门口，你们的必经之地，来一个我查一个，什么你们的手机，那都是我的手机！！<br>
+            4. 别人不敢让校规大于国法，我付柏力敢，我直接出台一个《学生使用手机管理制度》。第一次发现给予警告纪律处分，由家长将学生带回进行为期 1 天的规则教育、责任教育、感恩教育；第二次发现，给与记过处分，由家长将学生带回家进行为期 2 天的规则教育、责任教育、感恩教育、安全教育、诚信教育；第三次发现给与记大过及以上处分，由家长将学生带回家进行为期 3 天的规则教育、责任教育、感恩教育、安全教育、诚信教育，目标教育。屡教不改者，给与留校察看直至勒令退学处分。吓人吧？不好意思，有权利就是可以为所欲为，你们被我收了手机不但一句话不能说，你们还得感恩我，哈哈哈<br>
+            5. 我付柏力最近感觉学校小卖部的伙食有点太好了，都没人去食堂消费让我拿回扣了，这以后要是没有单位愿意来我们学校招标食堂可怎么办，是时候砍砍小卖部货架上能见到的商品了。方便面、零食、饮料，我砍砍砍！！还有人想把方便面带进学校？我收收收！！这群学生家长最好骗了，就说是为他们的健康着想就好了，嘿嘿<br>
+            6. 国庆七天怎么可能全部放完呢？五天对你们来说已经足够了，毕竟剩下的两天我还要留着给你们国庆后收手机呢。请假？想得美，我直接考试，谁敢请假？我直接让值班老师把考勤拍照发年级群<br><br>
+            相关乐子图：<br>
+            <div class="image-container">
+                <button class="btn btn-default" onclick="toggleImage(this)" data-hide-text="隐藏/工作群内通知" data-show-text="显示/工作群内通知">隐藏/工作群内通知</button>
+                <img src="./public/you_need_to_take_responsibility_for_everything_you_do.jpg" alt="描述图片" style="max-width: 100%; height: auto;">
+            </div>
+            <div class="image-container">
+                <button class="btn btn-default" onclick="toggleImage(this)" data-hide-text="隐藏/安检机现场实况" data-show-text="显示/安检机现场实况">隐藏/安检机现场实况</button>
+                <img src="./public/dont_try_to_find_me.jpg" alt="描述图片" style="max-width: 100%; height: auto;">
+                <img src="./public/dont_be_afraid.jpg" alt="描述图片" style="max-width: 100%; height: auto;">
+            </div>
+            <div class="image-container">
+                <button class="btn btn-default" onclick="toggleImage(this)" data-hide-text="隐藏/学生使用手机管理制度原文" data-show-text="显示/学生使用手机管理制度原文">隐藏/学生使用手机管理制度原文</button>
+                <img src="./public/youre_going_to_hell.jpg" alt="描述图片" style="max-width: 100%; height: auto;">
+                <img src="./public/youll_pay_for_everything_youve_done.jpg" alt="描述图片" style="max-width: 100%; height: auto;">
+            </div>
+            <div class="image-container">
+                <button class="btn btn-default" onclick="toggleImage(this)" data-hide-text="隐藏/校内其他班主任锐评" data-show-text="显示/校内其他班主任锐评">隐藏/校内其他班主任锐评</button>
+                <img src="./public/ive_been_watching_you.jpg" alt="描述图片" style="max-width: 100%; height: auto;">
+            </div>
+            <br>
+            更多光荣事迹未完待续，欢迎持续关注哦谢谢喵...
+            `; 
 
             
         </script>
@@ -92,7 +147,7 @@
                 color: gray;
             }
             #tips::after {
-                content: "（🖱  /👆 ↓）";
+                content: "（🖱 /👆 ↓）";
             }
             @keyframes UpStream_animation {
                 0% {
@@ -230,7 +285,7 @@
                     <table>
                         <tbody>
                             <tr>
-                                <td><img alt="Lilium formosanum var pricei.jpg" src="Lilium_formosanum_var_pricei.jpg" id="Lilium_formosanum_var_pricei">
+                                <td><img alt="lilium_formosanum_var_pricei.jpg" src="lilium_formosanum_var_pricei.jpg" id="Lilium_formosanum_var_pricei">
                                 </td>
                                 <td><div id="Sheiwusi">人生自古谁无死？不幸的，<span style="margin:.0em .2em .0em .2em; padding: .0em .2em .0em .2em; border-radius: 5px; border: thin solid; --darkreader-inline-border-top: initial; --darkreader-inline-border-right: initial; --darkreader-inline-border-bottom: initial; --darkreader-inline-border-left: initial;" data-darkreader-inline-border-top="" data-darkreader-inline-border-right="" data-darkreader-inline-border-bottom="" data-darkreader-inline-border-left=""><b id="dead_nameInSheiwusi"></b></span>已经逝世，因此无法继续与您互动，让我们永远缅怀它。</div>
                                 </td>
@@ -238,7 +293,8 @@
                         </tbody>
                     </table>
                 </div>
-                欢迎前往 <a href="https://github.com/Zhuhai-NO-3-High-School/Honoring-Legendary-Schools">开源仓库</a> 进行 Fork 使光荣事迹永驻 <i id="tips">继续向下滚动查看更多</i>
+                欢迎前往 <a href="https://github.com/Zhuhai-NO-3-High-School/Honoring-Legendary-Schools">开源仓库</a> 进行 Fork 使光荣事迹永驻<br>
+                <p id="tips">继续向下滚动查看更多</p>
             </div>
             <!-- 分割线后 主体 -->
             <div id="LingTang">
