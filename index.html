@@ -3,8 +3,6 @@
     <head>
         <meta charset="UTF-8">
 
-        <link rel="icon" href="favicon.ico" type="image/x-icon">
-
         <style>
             .image-container {
                 margin: 10px 0;
@@ -81,6 +79,8 @@
         <script src="./lottie.js" type="text/javascript"></script>
         <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
         <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
         <style>
             body {
                 background: black;
@@ -339,7 +339,7 @@
                 repo: 'Zhuhai-NO-3-High-School',
                 owner: 'bailifu',
                 admin: ['bailifu'],
-                id: location.pathname, // Ensure uniqueness and length less than 50
+                id: md5(location.pathname), // Ensure uniqueness and length less than 50
                 distractionFreeMode: false // Facebook-like distraction free mode
             });
             gitalk.render('gitalk-container');
