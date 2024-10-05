@@ -3,6 +3,8 @@
     <head>
         <meta charset="UTF-8">
 
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+
         <style>
             .image-container {
                 margin: 10px 0;
@@ -337,7 +339,7 @@
                 repo: 'Zhuhai-NO-3-High-School',
                 owner: 'bailifu',
                 admin: ['bailifu'],
-                id: 'ZH3Z.SBS', // Ensure uniqueness and length less than 50
+                id: location.pathname, // Ensure uniqueness and length less than 50
                 distractionFreeMode: false // Facebook-like distraction free mode
             });
             gitalk.render('gitalk-container');
